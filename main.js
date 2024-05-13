@@ -1,9 +1,12 @@
-import Express from "express";
+import express from "express";
 import MoviesRoute from "./routes/movies-routes.js"
 import connectDb from "./lib/db.js";
 
-const app = Express()
+const app = express()
 const port = 3000
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 connectDb()
 

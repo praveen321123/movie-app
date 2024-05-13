@@ -1,10 +1,12 @@
 import Express from "express";
-import { MovieDelete, MovieUpdate, MoviesCreate, MoviesList } from "../controller/movies-controller.js";
+import { MovieDelete, MovieUpdate, MoviesCreate, MoviesDetail, MoviesList } from "../controller/movies-controller.js";
 
 const router = Express.Router()
 
 // R - Movies Readings
 router.get('/',MoviesList)
+
+router.get('/:id', MoviesDetail)
 
 // C - Creating the movies
 router.post('/', MoviesCreate)
